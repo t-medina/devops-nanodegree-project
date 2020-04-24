@@ -27,7 +27,7 @@ pipeline {
             }
         }
 
-        stage('Apply Kubernetes configuration') {
+        stage('Deploy to Kubernetes') {
             steps {
                 withKubeConfig([credentialsId: 'KubeConfig']) {
                     sh 'kubectl apply -f deployment.yaml --validate=false' 
